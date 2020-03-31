@@ -66,6 +66,7 @@
 
     .output-text {
       margin-bottom: 20px;
+      color: rgb(11, 61, 26);
     }
 
     .output-text1 {
@@ -94,6 +95,7 @@
       }
 
       .output-text {
+        font-size: 12px;
         margin-bottom: 8px;
       }
 
