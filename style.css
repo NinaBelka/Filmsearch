@@ -8,8 +8,7 @@
       background: linear-gradient(rgb(1, 13, 27), rgb(148, 206, 245));
       color: #FFFFFF;
       width: 100%;
-      height: 100%;
-    }
+         }
 
     .title {
       color: black;
@@ -17,6 +16,10 @@
 
     .window {
       background-color: rgb(141, 215, 224);
+    }
+
+    .row {
+      height: 100%;
     }
 
     img {
@@ -77,13 +80,12 @@
         margin-bottom: 40px;
       }
 
-
       .container1 {
         flex-direction: column;
       }
 
       .col-4 {
-        max-width: 60%;
+        max-width: 80%;
         margin: 0 auto;
       }
 
