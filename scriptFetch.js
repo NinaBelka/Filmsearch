@@ -77,20 +77,22 @@ function showFullInfo() {
 
     .then(function (output) {
       movie.innerHTML = `
-      <h4 class="col-12 text-center text-success"> ${output.name || output.title} </h4>
-      <div class="col-4">
-        <img src='${urlPoster + output.poster_path}' alt='${output.name || output.title}'>
-        ${(output.homepage) ? `<p class="text-center"> <a href="${output.homepage}" target="_blank"> Официальная страница </a> </p>` : ''}
-        ${(output.imdb_id) ? `<p class="text-center" > <a href="https://imdb.com/title/${output.imdb_id}" target="_blank"> Страница на IMDB.com </a> </p>` : ''}
-      </div>
-      <div class="col-8">
-        <p> Рейтинг: ${output.vote_average}</p>
-        <p> Статус: ${output.status}</p>
-        <p> Премьера: ${output.first_air_date || output.release_date}</p>
+      <h4 class="col-12 text-center text-success movie-title"> ${output.name || output.title} </h4>
+      <div class="container1">
+        <div class="col-4">
+          <img class="poster" src='${urlPoster + output.poster_path}' alt='${output.name || output.title}'>
+          ${(output.homepage) ? `<p class="text-center"> <a href="${output.homepage}" target="_blank"> Официальная страница </a> </p>` : ''}
+          ${(output.imdb_id) ? `<p class="text-center" > <a href="https://imdb.com/title/${output.imdb_id}" target="_blank"> Страница на IMDB.com </a> </p>` : ''}
+        </div>
+        <div class="col-8">
+          <p class="output-text"> Рейтинг: ${output.vote_average}</p>
+          <p class="output-text"> Статус: ${output.status}</p>
+          <p class="output-text"> Премьера: ${output.first_air_date || output.release_date}</p>
 
-        ${(output.last_episode_to_air) ? `<p> ${output.number_of_seasons} сезон ${output.last_episode_to_air.episode_number} серия </p>` : ''}
+          ${(output.last_episode_to_air) ? `<p class="output-text"> ${output.number_of_seasons} сезон ${output.last_episode_to_air.episode_number} серия </p>` : ''}
 
-        <p> Описание ${output.overview}</p>
+          <p class="output-text1"> ${output.overview}</p>
+        </div>
       </div>
       `;
     })
