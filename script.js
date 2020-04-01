@@ -94,7 +94,7 @@ function showFullInfo() {
           <p class="output-text1"> Описание: ${output.overview}</p>
         </div>
       </div>
-      <div class="film">
+      <div class="container2">
         <div class="text-center youtube"></div>
       </div>
       `;
@@ -156,14 +156,14 @@ function getVideo(type, id) {
       return value.json();
     })
     .then((output) => {
-      let videoFrame = '<h4 class="col-12 text-center text-success"> Трейлеры </h4>';
+      let videoFrame = '<h4 class="col-12 text-center youtube-title"> Трейлеры </h4>';
 
       if (output.results.length === 0) {
         videoFrame = '<p> К сожалению, видео отсутствует </p>';
       }
 
       output.results.forEach((item) => {
-        videoFrame += '<iframe width="500" height="315" src="https://www.youtube.com/embed/' + item.key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        videoFrame += '<iframe width="350" height="315" src="https://www.youtube.com/embed/' + item.key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
       });
       youtube.innerHTML = videoFrame;
     })

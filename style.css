@@ -74,14 +74,20 @@
       font-size: 24px
     }
 
-    .film {
-      display: flex;
-      justify-content: space-around;
-      margin: 20px 0;
+    .youtube-title {
+      margin-bottom: 40px;
+      color: rgb(2, 2, 58);
     }
+
+    .container2 {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+    }
+
     .youtube {
       max-width: 100%;
-      /* margin-bottom: 20px; */
+      margin-bottom: 20px;
     }
 
     @media (max-width: 576px) {
