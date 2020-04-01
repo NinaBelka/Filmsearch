@@ -95,7 +95,7 @@ function showFullInfo() {
         </div>
       </div>
       <div class="film">
-        <div class="youtube"></div>
+        <div class="text-center youtube"></div>
       </div>
       `;
 
@@ -111,13 +111,13 @@ function showFullInfo() {
 
 document.addEventListener('DOMContentLoaded', function () {
   fetch('https://api.themoviedb.org/3/trending/all/week?api_key=464e10b60abead2a4d80d7babcfba4a2&language=ru')
-    .then(function (value) {
+    .then((value) => {
       if (value.status !== 200) {
         return Promise.reject(new Error(value.status));
       }
       return value.json();
     })
-    .then(function (output) {
+    .then((output) => {
       let inner = '<h4 class="col-12 text-center text-info"> Популярные фильмы недели </h4>';
       if (output.results.length === 0) {
         inner = '<h2 class="col-12 text-center text-primary"> По Вашему запросу ничего не найдено </h2>';
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
       addEventMedia();
 
     })
-    .catch(function (reason) {
+    .catch((reason) => {
       movie.innerHTML = 'Упс, что-то пошло не так!';
       console.error(reason || reason.status);
     });
@@ -156,14 +156,14 @@ function getVideo(type, id) {
       return value.json();
     })
     .then((output) => {
-      let videoFrame = '<h5 class="text-info"> Трейлеры </h5>';
+      let videoFrame = '<h4 class="col-12 text-center text-success"> Трейлеры </h4>';
 
       if (output.results.length === 0) {
         videoFrame = '<p> К сожалению, видео отсутствует </p>';
       }
 
       output.results.forEach((item) => {
-        videoFrame += '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + item.key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        videoFrame += '<iframe width="500" height="315" src="https://www.youtube.com/embed/' + item.key + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
       });
       youtube.innerHTML = videoFrame;
     })
